@@ -61,7 +61,6 @@ h1{
 }
 
 h2{
-	font-size: 30px;
 	color: #fff;
 	font-weight: 400;
 	font-family: "Raleway", sans-serif;
@@ -74,7 +73,7 @@ h2{
 h3{
 	font-size: 30px;
 	color: #000;
-	font-weight: 500;
+	font-weight: 600;
 }
 
 h4{
@@ -444,13 +443,201 @@ nav{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Mobile*/
+
+.mobile {
+	background-color: #fbfaf8;
+	padding-top: 80px;
+}
+
+.mobile .container {
+	display: flex;
+	justify-content: center;
+}
+
+.mobile-img {
+	-o-object-fit: cover;
+	   object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.mobile__content {
+	max-width: 670px;
+	width: 100%;
+	margin-left: 10px;
+	-ms-grid-row-align: center;
+	    align-self: center;
+}
+
+.mobile__content h3{
+	text-align: left;
+}
+
+.mobile__content p{
+	margin: 	35px 0;
+}
+
+.mobile__advantages {
+	margin-left: 50px;
+}
+.mobile__advantages li {
+	padding-left: 51px;
+	background-image: url(../img/mobile.svg);
+	background-repeat: no-repeat;
+	margin: 10px 0;
+	letter-spacing: 1px;
+}
+
+
+/*Counts*/
+
+.counts {
+  background-image: 
+  				linear-gradient( 90deg, rgb(33,27,25) 0%, rgb(78,52,39) 100%);
+  	padding: 65px 0;
+
+}
+.counts .container {
+	display: flex;
+	justify-content: space-between;
+	max-width: 960px;
+}
+.count {
+	display: flex;
+	flex-direction: column;
+	margin-right: 10px;
+}
+
+.count:last-child {
+	margin-right: 0;
+}
+.count__number {
+	padding-top: 75px;
+	background-repeat: no-repeat;
+	background-position: top center;
+	width: 100%;
+	text-align: center;
+
+	font-size: 48px;
+	font-weight: 200;
+	color: #fff;
+}
+
+.c1{
+	background-image: url(../img/count1.svg);
+}
+
+.c2{
+	background-image: url(../img/count2.svg);
+}
+
+.c3{
+	background-image: url(../img/count3.svg);
+}
+
+.c4{
+	background-image: url(../img/count4.svg);
+}
+
+.c5{
+	background-image: url(../img/count5.svg);
+}
+
+.count__text {
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 300;
+	color: #c7b299;
+	opacity: 0.8;
+	margin-top: 15px;
+	letter-spacing: 0;
+	text-align: center;
+}
+
+
+/*Logos*/
+
+.logos {
+	padding: 135px 0;
+	background-image: url(../img/logos-bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 58%;
+}
+
+.logos .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.logos-img {
+	width: 220px;
+	margin-right: 30px;
+	margin-bottom: 30px;
+}
+
+.logos-img:last-child {
+	margin-right: 0;
+}
+
+@media(max-width: 1050px){
+
+
+	/*Logos*/
+
+	.logos .container {
+		justify-content: center;
+	}
+}
+
 @media(max-width: 990px){
 
 
 	nav{
-		justify-content: flex-end;
+		/*justify-content: flex-end;*/
+		position: absolute;
+		width: 100%;
+		height: inherit;
+
 	}
 
+	.nav__icons{
+		position: absolute;
+		width: 100%;
+		left: 0;
+	}
+
+	.nav__icon{
+		margin-top: 13px;
+	}
+	.head{
+		justify-content: center;
+	}
 	.menu__btn{
 		opacity: 1;
 	}
@@ -516,6 +703,27 @@ nav{
 	}
 }
 
+@media(max-width: 850px){
+
+
+	/*Mobile*/
+
+	.mobile{
+		padding-bottom: 40px;
+	}
+
+	.mobile__content p {
+		margin: 10px 0 15px 0;
+	}
+	.mobile__img{
+		display: none;
+	}
+
+	.mobile__advantages{
+		margin-left: 0;
+	}
+}
+
 @media(max-width: 600px){
 
 
@@ -527,6 +735,22 @@ nav{
 
 }
 
+
+@media(max-width: 700px){
+
+
+	/*Counts*/
+
+	.counts .container {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.count {
+		width: 135px;
+		margin-bottom: 20px;
+	}
+}
 
 /*Можно увеличить*/
 @media(max-width: 340px){
@@ -558,6 +782,6 @@ nav{
 		bottom: 4%;
 	}
 }
-}
+
 
 

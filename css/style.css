@@ -152,7 +152,7 @@ header{
   	display: flex; /* используем flex для центрирования содержимого */
   	align-items: center;  /* центрируем содержимое кнопки */
   	position: fixed;
-  	top: 20px;
+  	top: 45px;
   	left: 20px;
   	width: 26px;
   	height: 26px;
@@ -168,7 +168,7 @@ header{
   	position: absolute;
   	width: 100%;
   	height: 2px;
-  	background-color: #616161;
+  	background-color: #fff;
  	transition: all 0.2s ease;
 }
 
@@ -225,6 +225,7 @@ nav{
 }
 
 .nav__icons {
+	/*top: 45px;*/
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -978,7 +979,6 @@ header .slick-dots li button{
 
 
 	nav{
-		/*justify-content: flex-end;*/
 		position: absolute;
 		width: 100%;
 		height: inherit;
@@ -987,8 +987,18 @@ header .slick-dots li button{
 
 	.nav__icons{
 		position: absolute;
+		justify-content: flex-end;
 		width: 100%;
 		left: 0;
+	}
+
+	.cart .nav__img{
+		height: 0;
+		width: 0;
+	}
+
+	.nav__img:after {
+		content: "Cart";
 	}
 
 	.nav__icon{
@@ -1020,7 +1030,7 @@ header .slick-dots li button{
 	 	transition: all 0.2s ease;
 	}
 	/* элементы меню */
-	.menu__item {
+	.nav__item, .cart .nav__img:after {
 	  display: block;
 	  padding: 12px 24px;
 	  color: #333;
@@ -1028,7 +1038,7 @@ header .slick-dots li button{
 	  font-weight: 600;
 	  text-decoration: none;
 	}
-	.menu__item:hover {
+	.nav__item:hover {
 	  background-color: #CFD8DC;
 	}
 	

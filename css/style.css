@@ -314,9 +314,6 @@ header .slick-arrow{
 	filter: grayscale(100%);
 }
 
-header .slick-arrow:hover {
-/*	filter: sepia(100%) hue-rotate(90deg) saturate(18%);*/
-}
 /* Стрелка влево */
 header .slick-arrow.slick-prev{
 	top: 50%;
@@ -701,7 +698,7 @@ header .slick-dots li button{
 /* Клонированный слайд */
 .slick-slide.slick-cloned{}
 /* Стрелка */
-.posts__items .post__item.slick-arrow{
+.posts__items .slick-arrow{
 	position: absolute;
 	bottom: 0px;
 	font-size: 0;
@@ -720,14 +717,14 @@ header .slick-dots li button{
 }
 
 /* Стрелка влево */
-.posts__items .post__item.slick-arrow.slick-prev{
+.posts__items .slick-arrow.slick-prev{
 	right: calc(50% + 15px);
 	transform: translateX(50%);
 	background-image: url(../img/right.svg);
 	transform: scale(-1);
 }
 /* Стрелка вправо */
-.posts__items .post__item.slick-arrow.slick-next{
+.posts__items .slick-arrow.slick-next{
 	left: calc(50% + 15px);
 	transform: translateX(-50%);
 	background-image: url(../img/right.svg);

@@ -40,7 +40,7 @@ $(function(){
     {
       breakpoint: 900,
       settings: {
-        slidesToShow: 2,
+      slidesToShow: 2,
 
         // slidesToScroll: 3,
         // infinite: true,
@@ -50,9 +50,9 @@ $(function(){
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 1,
-        centerMode: true,
-        variableWidth: true,
+      slidesToShow: 1,
+      centerMode: true,
+      variableWidth: true,
  
         // slidesToScroll: 2
       }

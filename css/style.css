@@ -627,6 +627,7 @@ header .slick-dots li button{
 /*Posts*/
 
 .posts {
+	overflow-x: hidden;
 	margin: 80px 0;
 }
 .posts .container {

@@ -309,17 +309,22 @@ header .slick-arrow{
 	padding: 20px;
 	background-repeat: no-repeat;
 	background-position: center;
+	background-image: url(../img/header-right.svg);
+	transition-duration: .2s;
+	filter: grayscale(100%);
+}
+
+header .slick-arrow:hover {
+/*	filter: sepia(100%) hue-rotate(90deg) saturate(18%);*/
 }
 /* Стрелка влево */
 header .slick-arrow.slick-prev{
-	background-image: url(../img/right.svg);
 	top: 50%;
 	transform: translateY(-50%) scale(-1, 1);
 	left: 7%;
 }
 /* Стрелка вправо */
 header .slick-arrow.slick-next{
-	background-image: url(../img/right.svg);
 	top: 50%;
 	transform: translateY(-50%);
 	right: 7%;
@@ -696,28 +701,40 @@ header .slick-dots li button{
 /* Клонированный слайд */
 .slick-slide.slick-cloned{}
 /* Стрелка */
-.slick-arrow{
+.posts__items .post__item.slick-arrow{
 	position: absolute;
-	bottom: -40px;
+	bottom: 0px;
 	font-size: 0;
 	width: 22px;
 	height: 22px;
 	border-radius: 50%;
-	border: 1px solid #d4d4d4;
+	border: none;
 	background-color: transparent;
 	z-index: 2;
 	cursor: pointer;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	filter: grayscale(100%);
+	transition-duration: .2s;
 }
 
 /* Стрелка влево */
-.slick-arrow.slick-prev{
+.posts__items .post__item.slick-arrow.slick-prev{
 	right: calc(50% + 15px);
 	transform: translateX(50%);
+	background-image: url(../img/right.svg);
+	transform: scale(-1);
 }
 /* Стрелка вправо */
-.slick-arrow.slick-next{
+.posts__items .post__item.slick-arrow.slick-next{
 	left: calc(50% + 15px);
 	transform: translateX(-50%);
+	background-image: url(../img/right.svg);
+}
+
+.slick-arrow:hover {
+	filter: none;
 }
 /* Стрелка не активная */
 .slick-arrow.slick-disabled{}
@@ -887,7 +904,6 @@ header .slick-dots li button{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	/*flex: 1 1 auto;*/
 	padding: 30px;
 }
 
@@ -898,18 +914,22 @@ header .slick-dots li button{
 	color: #555;
 	transition-duration: .2s;
 }
+
 .post__text {
 	letter-spacing: 1px;
 	font-size: 14px;
 	margin-bottom: 15px;
-/*	flex: 1 1 auto;*/
 }
+
 .post__btn {
 	display: inline-block;
 	color: #c7b299;
 	padding-right: 20px;
 }
 
+.post__btn i.icon-arrow {
+	font-size: 8px;
+}
 
 /*===================================*/
 /*Logos*/
@@ -1145,7 +1165,7 @@ header .slick-dots li button{
 		padding-bottom: 0px;
 	}
 	.posts__items .slick-arrow {
-		bottom: 40px;
+		bottom: 20px;
 	}
 	.posts__items .posts__item.slick-slide{
 		transform: scale(0.7);

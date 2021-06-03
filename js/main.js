@@ -63,3 +63,9 @@ $(function(){
   ]
   });
 });
+
+// $(".slick-arrow.slick-next").addClass("icon-arrow");
+
+
+// $(".slick-arrow.slick-prev").addClass("icon-arrow")
+

@@ -32,7 +32,7 @@ body{
 .container{
 	margin: 0 auto;
 	padding: 0 20px;
-	max-width: 1215px;
+	max-width: 1210px;
 	width: 100%;
 }
 
@@ -46,6 +46,7 @@ h1, h2, h3, h4, h5, h6{
 	color: #fff;
 	text-align: center;
 	margin: 0;
+	line-height: 1.1em;
 }
 
 h1{
@@ -53,7 +54,6 @@ h1{
 	font-size: 52px;
 	color: #fff;
 	font-weight: 800;
-	line-height: 52px;
 	/*font-size: calc(65px + (35)*(100vw / 1920))*/
 
 	letter-spacing: .5px;
@@ -279,7 +279,7 @@ nav{
 /* Ограничивающая оболочка */
 .slick-list {}
 /* Лента слайдов */
-.slick-track{
+header .slick-track{
 	display: flex;
 }
 /* Слайд */
@@ -296,7 +296,7 @@ nav{
 
 
 
-.slick-arrow{
+header .slick-arrow{
 	font-size: 0;
 	position: absolute;
 	width: 40px;
@@ -311,14 +311,14 @@ nav{
 	background-position: center;
 }
 /* Стрелка влево */
-.slick-arrow.slick-prev{
+header .slick-arrow.slick-prev{
 	background-image: url(../img/right.svg);
 	top: 50%;
 	transform: translateY(-50%) scale(-1, 1);
 	left: 7%;
 }
 /* Стрелка вправо */
-.slick-arrow.slick-next{
+header .slick-arrow.slick-next{
 	background-image: url(../img/right.svg);
 	top: 50%;
 	transform: translateY(-50%);
@@ -330,14 +330,15 @@ nav{
 /* Стрелка не активная */
 .slick-arrow.slick-disabled{}
 /* Точки (булиты) */
-.slick-dots{
+header .slick-dots{
 	display: flex;
+	align-items: center;
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
 	bottom: 10px;
 }
-.slick-dots li{
+header .slick-dots li{
 	background-color: transparent;
 	border-radius: 50%;
 	opacity: 0.502;
@@ -346,15 +347,16 @@ nav{
  	margin: 0 5px;
  	font-size: 0;
  	background-color: #999897;
+ 	box-sizing: content-box;
 }
 /* Активная точка */
-.slick-dots li.slick-active{
+header .slick-dots li.slick-active{
 	background-color: transparent;
 	border: 2px solid #d3c1ad;
 	font-size: 0;
 }
 /* Элемент точки */
-.slick-dots li button{
+header .slick-dots li button{
 	font-size: 0;
 	opacity: 0;
 }
@@ -439,8 +441,50 @@ nav{
 }
 
 
+/*=============================================*/
+/*Idea*/
+.ideas {}
+.ideas .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
 
+.ideas__title {
+	margin-bottom: 20px;
+}
 
+.ideas__text {
+	text-align: center;
+	margin-bottom: 20px;
+	max-width: 800px;
+	letter-spacing: 1px;
+}
+.ideas__img {
+	width: 100%;
+	display: flex;
+	align-items: flex-end;
+}
+
+.ideas-img {
+	-o-object-fit: cover;
+	   object-fit: cover;
+}
+
+.thanks {
+
+  	background-image: 
+  				linear-gradient( 90deg, rgb(33,27,25) 0%, rgb(78,52,39) 100%);
+  	padding: 40px 0;
+  	color: #fff;
+  	text-align: center;
+  	font-size: 25px;
+}
+
+.thanks span {
+	color: #c7b299;
+}
 
 
 
@@ -579,6 +623,294 @@ nav{
 }
 
 
+/*==============================================*/
+/*Posts*/
+
+.posts {
+	margin: 80px 0;
+}
+.posts .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 1250px;
+/*	overflow-x: hidden;*/
+}
+.posts__title {
+	margin-bottom: 25px;
+}
+
+.posts__text {
+	max-width: 750px;
+	letter-spacing: 1px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.posts__items {
+	position: relative;
+	padding-bottom: 40px;
+	overflow-y: visible;
+}
+
+
+.posts__items .slick-slider{
+	min-width: 0;
+
+}
+/* Слайдер запущен */
+.slick-slider.slick-initialized{
+	min-width: 0;
+	width: 100%;
+/*	overflow-x: hidden;*/
+}
+/* Слайдер с точками */
+.slick-slider.slick-dotted{}
+/* Ограничивающая оболочка */
+.slick-list {}
+/* Лента слайдов */
+.posts__items .slick-track{
+	display: flex;
+}
+/* Слайд */
+.posts__items .posts__item.slick-slide{
+	margin: 0 20px;
+	opacity: 0;
+
+}
+/* Слайд активный (показывается) */
+.posts__items .posts__item.slick-slide.slick-active{
+	opacity: 1;
+	transition: all .2s ease; 
+}
+/*	margin: 	0 40px;posts__item slick-slide slick-active
+
+/* Слайд основной */
+.slick-slide.slick-current{}
+/* Слайд по центру */
+.posts__items .posts__item.slick-slide.slick-center{
+	opacity: 1;
+	transition: all .2s ease; 
+}
+/* Клонированный слайд */
+.slick-slide.slick-cloned{}
+/* Стрелка */
+.slick-arrow{
+	position: absolute;
+	bottom: -40px;
+	font-size: 0;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	border: 1px solid #d4d4d4;
+	background-color: transparent;
+	z-index: 2;
+	cursor: pointer;
+}
+
+/* Стрелка влево */
+.slick-arrow.slick-prev{
+	right: calc(50% + 15px);
+	transform: translateX(50%);
+}
+/* Стрелка вправо */
+.slick-arrow.slick-next{
+	left: calc(50% + 15px);
+	transform: translateX(-50%);
+}
+/* Стрелка не активная */
+.slick-arrow.slick-disabled{}
+/* Точки (булиты) */
+.slick-dots{}
+.slick-dots li{}
+/* Активная точка */
+.slick-dots li.slick-active{}
+/* Элемент точки */
+.slick-dots li button{}
+
+.posts__items .slick-active + .slick-active + .slick-active {
+/*	margin-right: 0;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.posts__item {
+	max-width: 370px;
+	border: 1px solid #f8f8f8;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+	transition-duration: .2s;
+}
+
+.posts__item:hover {
+	background-color: #362f2d;
+	border: 0px solid #f8f8f8;
+	transform: scale(1.05);
+}
+
+.posts__item:hover .post__title {
+	color: #c7b299;
+}
+
+.posts__item:hover .post__day {
+	background-color: #c7b299;
+}
+.posts__item:hover .post__month {
+	background-color: #a48d72;
+}
+
+.post__date {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	border-radius: 3px;
+	overflow: hidden;
+	z-index: 1;
+}
+.post__day {
+	background-color: #363636;
+	text-align: center;
+	padding: 5px 5px;
+	font-size: 24px;
+	font-weight: 300;
+	color: #fff;
+	width: 100%;
+	transition-duration: .2s;
+}
+.post__month {
+	background-color: #000;
+	text-align: center;
+	padding: 5px 5px;
+	font-family: "Roboto", "Arial", sans-serif;
+	font-size: 12px;
+	color: #fff;
+	width: 100%;
+	transition-duration: .2s;
+}
+
+.post__img {
+	max-width: 100%;
+	overflow-x: hidden;
+	position: relative;
+}
+
+/* Слайдер */
+.post__img .slick-slider{
+	overflow-x: hidden;
+}
+
+.post__img .slick-slide {
+
+}
+/* Лента слайдов */
+.post__img .slick-track{
+	background-color: #fff;
+}
+
+.post__img .slick-dots{
+	display: flex;
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+.post__img .slick-dots li{
+	box-sizing: content-box;
+	background-color: transparent;
+	border-radius: 50%;
+	opacity: 0.702;
+	width: 11px;
+ 	height: 11px;
+ 	margin: 0 5px;
+ 	font-size: 0;
+ 	background-color: #999897;
+}
+/* Активная точка */
+.post__img .slick-dots li.slick-active{
+	background-color: transparent;
+	border: 2px solid #d3c1ad;
+	font-size: 0;
+}
+/* Элемент точки */
+.post__img .slick-dots li button{
+	font-size: 0;
+	opacity: 0;
+}
+
+.post__img {
+	width: 100%;
+	max-height: 220px;
+	overflow: hidden;
+}
+
+.post-img {
+	-o-object-fit: cover;
+	   object-fit: cover;
+	   width: auto;
+	  max-width: 370px;
+	  max-height: 220px;
+}
+
+.post__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	/*flex: 1 1 auto;*/
+	padding: 30px;
+}
+
+.post__title {
+	margin-bottom: 20px;
+	font-size: 20px;
+	font-weight: 500;
+	color: #555;
+	transition-duration: .2s;
+}
+.post__text {
+	letter-spacing: 1px;
+	font-size: 14px;
+	margin-bottom: 15px;
+/*	flex: 1 1 auto;*/
+}
+.post__btn {
+	display: inline-block;
+	color: #c7b299;
+	padding-right: 20px;
+}
+
+
+/*===================================*/
 /*Logos*/
 
 .logos {
@@ -604,6 +936,15 @@ nav{
 .logos-img:last-child {
 	margin-right: 0;
 }
+
+
+@media(max-width: 1206px){
+
+
+	/*Posts*/
+
+}
+
 
 @media(max-width: 1050px){
 
@@ -690,7 +1031,7 @@ nav{
 	  left: 0;
 	}
 
-	.slick-arrow{
+	header .slick-arrow{
 		opacity: 0;
 		pointer-events: none;
 	}
@@ -724,17 +1065,6 @@ nav{
 	}
 }
 
-@media(max-width: 600px){
-
-
-	/*Work*/
-
-	.work__item{
-		flex: 0 0 293.75px;
-	}
-
-}
-
 
 @media(max-width: 700px){
 
@@ -752,8 +1082,43 @@ nav{
 	}
 }
 
+
+@media(max-width: 600px){
+
+
+	/*Work*/
+
+	.work__item{
+		flex: 0 0 293.75px;
+	}
+
+
+	/*Posts*/
+
+	.posts__items .posts__item.slick-slide{
+		margin: 0 20px;
+	}
+
+	.posts__item {
+		max-width: 370px;
+		width: 100%;
+	}
+
+	.post__img {
+		max-width: 370px;
+		width: 100%;
+	}
+
+	.post-img {
+		max-width: 370px;
+		width: 100%;
+	}
+
+}
+
+
 /*Можно увеличить*/
-@media(max-width: 340px){
+@media(max-width: 370px){
 	
 
 	/*Header*/
@@ -771,6 +1136,18 @@ nav{
 
 	h1{
 		font-size: 45px;
+	}
+
+
+	/*Posts*/
+	.posts__items {
+		padding-bottom: 0px;
+	}
+	.posts__items .slick-arrow {
+		bottom: 40px;
+	}
+	.posts__items .posts__item.slick-slide{
+		transform: scale(0.7);
 	}
 }
 

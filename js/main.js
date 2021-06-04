@@ -82,3 +82,36 @@ $("#loadMore").on("click", function(event){
 	event.preventDefault();
 // 	$("#projects__content").load("../projects.html");
 })
+
+
+// let video = $(".presentation__video");
+// $(document).ready(function(){
+// $("#btnPlay").on("click", function(){
+// 	// console.log(video.src());
+
+
+// 	if (video.paused) { 
+//       video.play();
+//    } else {
+//       video.pause();
+//    }
+// });	
+// })
+
+
+
+jQuery( document ).ready(function() {
+	$("#btnPlay").on("click", function(){
+		$('.presentation__video').trigger("click");
+		$(".presentation__overlay").animate({"opacity": "0"}, 500, 
+			function(){
+				$(this).remove()
+			});
+	});
+
+
+	$('.presentation__video').on("click", function() {
+      this.paused ? this.play() : this.pause(); $(this).off("click");
+      $(this).prop("controls", true);
+   }); 
+});

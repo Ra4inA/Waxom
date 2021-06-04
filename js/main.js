@@ -60,3 +60,25 @@ $(window).resize(function(){
 		$('.nav__list').append($('.cart'));
 	}
 });
+
+$(".projects__tab-btns input").on("change", function(){
+	console.log("ya tyt");
+	
+	let a = $(this).attr("id");
+	let projects = $(".project");
+	$("#projects__content").css("opacity", "0").animate({"opacity": "1"}, 200);
+	for(let i=0; i < projects.length; i++){
+		console.log("ya ty1t");
+		if(!$(projects[i]).hasClass(a)){
+			$(projects[i]).css("display", "none");
+			console.log("ya tys1t");
+		} else {
+			$(projects[i]).css("display", "block");
+		}
+	}
+});
+
+$("#loadMore").on("click", function(event){
+	event.preventDefault();
+// 	$("#projects__content").load("../projects.html");
+})

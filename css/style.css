@@ -6,7 +6,7 @@
 /*Specification*/
 
 *{
-	box-sizing: border-box;;
+	box-sizing: border-box;
 }
 
 *:focus {
@@ -22,7 +22,7 @@ body{
 	font-family: "Monserrat", "Arial", sans-serif;
 	padding: 0;
 	margin: 0;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	font-size: 16px;
 	color: #848484;
 	font-weight: 300;
@@ -103,14 +103,13 @@ img{
   background-color: #998675;
   box-shadow: inset 0px 3px 0px 0px rgba(115, 99, 87, 0.004);
   text-align: center;
-  line-height: 50px;
-  padding: 0 25px;
+  padding: 21px 35px;
   color: #fff;
   text-transform: uppercase;
 /*  border-bottom: 3px solid #736357;*/
 	font-weight: 800;
 	font-size: 14px;
-	margin-top: 50px;
+
 	letter-spacing: 1px;
 
 }
@@ -144,6 +143,7 @@ header{
   position: absolute;
   left: 0;
   top: 0;
+  position: fixed;
 }
 
 /* стилизуем кнопку */
@@ -249,6 +249,7 @@ nav{
 	text-align: center;
 }
 .offer__btn {
+	margin-top: 50px;
 }
 
 .slider {
@@ -490,23 +491,181 @@ header .slick-dots li button{
 }
 
 
+/*=====================================*/
+/*Projects*/
 
 
+.projects {
+	margin: 80px 0;
+}
+.projects .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 1240px;
+}
+.projects__title {
+	margin-bottom: 20px;	
+}
+.projects__text {
+	max-width: 720px;
+	text-align: center;
+	margin-bottom: 40px;	
+
+}
+.projects__tabs {
+/*	display: flex;
+	margin-right: 10px;*/
+	margin-bottom: 40px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: -30px;
+}
+
+.projects__tabs:last-child {
+/*	margin-right: 0;*/
+}
 
 
+.projects__tab-btns {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: 40px;
+}
 
 
+.projects__tab-btn:last-child {
+	margin-right: 0;
+}
+
+.projects__tab-btns input {
+	width: 0;
+	height: 0;
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.projects__tab-btns label {
+	padding: 10px 16px;
+	border: 1px solid #ebebeb;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-right: 10px;
+	color: #8c8c8c;
+	margin-bottom: 10px;
+}
+
+.projects__tab-btns input:checked + label {
+	background-color: #998675;
+	color: #fff;
+}
+
+.projects__tab-btns label:last-child {
+	margin-right: 0;
+}
+
+#projects__content {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%;
+}
+.project {
+	flex: 0 0 calc(33.3333% - 30px);
+	min-width: 270px;
+	margin: 0 15px;
+	background-color: #fbfaf8;
+	margin-bottom: 30px;
+	transition: all .2s ease;
+}
+
+.project:nth-child(3n) {
+/*	margin-right: 0;*/
+}
 
 
+.project:hover {
+	background-color: #362f2d;
+}
+.project:hover .project__title {
+	color: #fff;
+}
+
+.project:hover .project__subtitle {
+	color: #c7b299;
+}
+
+.project:hover .project__overlay {
+	opacity: 1;
+}
+
+.project__img-wrapper {
+	position: relative;
+	height: 237px;
+}
+.project__img {
+	-o-object-fit: cover;
+	   object-fit: cover;
 
 
+}
+.project__overlay {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all .2s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
+.overlay_btns {
 
+}
+.overlay_btns i {
+	color: #fff;
+	padding: 10px;
+	margin-right: 10px;
+	font-size: 25px;
+	transition: all .2s ease;
+}
 
+.overlay_btns i:hover {
+	color: #c7b299;
+}
 
-
-
-
+.overlay_btns a+a i {
+	margin: 0;
+}
+.project__content {
+	padding: 30px;
+}
+.project__title {
+	color: #c7b299;
+	font-family: "Raleway", "Arial", sans-serif;
+	font-size: 20px;
+	font-weight: 500;
+	transition: all .2s ease;
+}
+.project__theme {
+	font-size: 14px;
+	font-weight: 300;
+	color: #d1d1d1;
+	transition: all .2s ease;
+}
+.projects__load {
+	margin-top: 40px;
+	-ms-grid-row-align: center;
+	    align-self: center;
+	display: inline-block;
+}
 
 
 
@@ -556,7 +715,6 @@ header .slick-dots li button{
 	background-image: url(../img/mobile.svg);
 	background-repeat: no-repeat;
 	margin: 10px 0;
-	letter-spacing: 1px;
 }
 
 
@@ -646,7 +804,6 @@ header .slick-dots li button{
 
 .posts__text {
 	max-width: 750px;
-	letter-spacing: 1px;
 	text-align: center;
 	margin-bottom: 30px;
 }
@@ -1070,6 +1227,13 @@ header .slick-dots li button{
 	.work__item{
 		flex: 0 0 33.3333%;
 	}
+
+
+	/*Projects*/
+
+	.project {
+		flex: 0 1 calc(50% - 30px);
+	}
 }
 
 @media(max-width: 850px){
@@ -1108,6 +1272,21 @@ header .slick-dots li button{
 		width: 135px;
 		margin-bottom: 20px;
 	}
+
+
+	/*Project*/
+
+		.project {
+		flex: 0 1 calc(100% - 30px);
+	}
+
+		.project__img-wrapper {
+			height: 400px;
+		}
+
+		.project__overlay {
+			opacity: 1
+		}
 }
 
 

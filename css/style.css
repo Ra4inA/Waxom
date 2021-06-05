@@ -97,7 +97,6 @@ img{
 }
 
 .btn{
-
   	border-radius: 3px;
   	background-color: #998675;
   	box-shadow: inset 0px 3px 0px 0px rgba(115, 99, 87, 0.004);
@@ -108,7 +107,12 @@ img{
 	font-weight: 800;
 	font-size: 14px;
 	letter-spacing: 1px;
+	border: 1px solid #998675;
+	transition-duration: .2s;
+}
 
+.btn:hover {
+	background-color: transparent;
 }
 /*Header*/
 	
@@ -149,8 +153,8 @@ header{
   	display: flex; /* используем flex для центрирования содержимого */
   	align-items: center;  /* центрируем содержимое кнопки */
   	position: fixed;
-  	top: 45px;
-  	left: 20px;
+ /* 	top: 45px;
+*/  	left: 20px;
   	width: 26px;
   	height: 26px;
   	cursor: pointer;
@@ -219,8 +223,42 @@ nav{
 	color: #fff;
 	font-size: 14px;
 	letter-spacing: 1px;
+	position: relative;
 }
 
+.nav__link {
+	padding: 5px;
+	color: #fff;
+}
+
+.nav__link_icon {
+	font-size: 24px;
+	transition-duration: .2s;
+}
+
+.nav__link_icon:hover {
+	color: #998675;
+}
+
+.cart span {
+	font-size: 0;
+}
+.nav__item:after {
+	content: "";
+	position: absolute;
+	width: 120%;
+	height: 1px;
+	background-color: #fff;
+	bottom: 0;
+	left: -10%;
+	opacity: 0;
+	transition-duration: .2s;
+}
+
+.nav__item:hover:after {
+	opacity: 1;
+	bottom: -5px;
+}
 .nav__icons {
 	/*top: 45px;*/
 	display: flex;
@@ -501,6 +539,7 @@ header .slick-dots li button{
 
 .projects {
 	margin: 80px 0;
+	padding: 0 0 30px;
 }
 .projects .container {
 	display: flex;
@@ -1459,21 +1498,14 @@ footer.rows .container {
 		left: 0;
 	}
 
-	.cart .nav__img{
-		height: 0;
-		width: 0;
-	}
-
-	.nav__img:after {
-		content: "Cart";
-	}
-
 	.nav__icon{
 		margin-top: 13px;
 	}
+
 	.head{
 		justify-content: center;
 	}
+
 	.menu__btn{
 		opacity: 1;
 	}
@@ -1487,7 +1519,7 @@ footer.rows .container {
 	  	top: 0;
 	  	left: -100%;
 	  	width: 300px;
-	  	height: 100%;
+	  	min-height: 100vh;
 	  	margin: 0;
 	  	padding: 80px 0;
 	  	list-style: none;
@@ -1496,20 +1528,42 @@ footer.rows .container {
 	  	box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
 	 	transition: all 0.2s ease;
 	}
+
 	/* элементы меню */
-	.nav__item, .cart .nav__img:after {
+	.nav__item, .cart span {
 	  display: block;
 	  padding: 12px 24px;
-	  color: #333;
-	  font-size: 20px;
-	  font-weight: 600;
-	  text-decoration: none;
 	}
-	.nav__item:hover {
+
+	.nav__item:after {
+		display: none;
+	}
+
+	.nav__link, .cart span {
+		font-family: "Montserrat", "Arial", sans-serif;
+ 		color: #333;
+		font-size: 20px;
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	.nav__item:hover, .cart span:hover {
 	  background-color: #CFD8DC;
+	  color: #333;
 	}
-	
-	
+
+	.cart {
+		font-size: 0px;
+	}
+
+	.cart span {
+		margin-top: -25px;
+	}
+
+	.icon-icon-search {
+		color: #fff;
+	}
+
 	#menu__toggle:checked ~ .menu__btn > span {
 	  transform: rotate(45deg);
 	}
@@ -1796,7 +1850,60 @@ footer.rows .container {
 		bottom: 4%;
 	}
 }
+
+
+
+.layer0 {
+	width: 100vw;
+	height: 100vh;
+	pointer-events: none;
+	position: fixed;
 }
 
+.layer0._animate {
+	opacity: 1;
+	background-color: #fff;
+	transition-duration: .7s;
+}
 
+.layer0._animate-Active {
+	background-color: transparent;
+}
 
+._animate {
+	transition: all 0.5s ease;
+	opacity: 0;
+}
+
+._animate-left {
+	transform: translateX(-100px);
+}
+
+._animate-right {
+	transform: translateX(100px);
+}
+._animate-top {
+	transform: translateY(100%);	
+}
+
+._animate-bottom {
+	transform: translateY(-100%);	
+}
+
+.offer._animate {
+	transition-delay: .2s;
+}
+
+.offer._animate-left {
+	transform: translate(-70%, -50%);
+}
+
+._animate-Active {
+	transform: translateX(0);
+	transform: translate(0);
+	opacity: 1;
+}
+
+.offer._animate-Active {
+	transform: translate(-50%, -50%);
+}

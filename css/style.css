@@ -16,6 +16,7 @@
 
 html{
 	overflow-x: hidden;
+	width: 100vw;
 }
 
 body{
@@ -193,6 +194,7 @@ header{
 	justify-content: center;
 	align-items: center;
 	color: #fff;
+	font-size: 10px;
 }
 
 .logo:hover{
@@ -200,8 +202,8 @@ header{
 }
 
 .logo__img{
-	width: 64px;
-	height: 56px;
+	width: 0;
+	height: 0;
 }
 
 nav{
@@ -314,8 +316,24 @@ nav{
 	height: 100vh;
 }
 .slider__item img {
+	object-fit: cover;
+}
+.slider__item {
 	-o-object-fit: cover;
 	   object-fit: cover;
+	position: relative;
+	
+}
+.slider__item::after {
+	top: 0;
+	left: 0;
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.7;
+	content: '';
 }
 
 /* Слайдер */
@@ -323,7 +341,9 @@ nav{
 
 }
 /* Слайдер запущен */
-.slick-slider.slick-initialized{}
+.slick-slider.slick-initialized{
+
+}
 /* Слайдер с точками */
 .slick-slider.slick-dotted{}
 /* Ограничивающая оболочка */
@@ -421,6 +441,9 @@ header .slick-dots li button{
 	padding: 80px 0;
 }
 
+.works__title {
+	margin-bottom: 60px;
+}
 .work__list {
 	display: flex;
 	justify-content: center;
@@ -684,17 +707,24 @@ header .slick-dots li button{
 }
 
 .overlay_btns {
-
-}
-.overlay_btns i {
 	color: #fff;
-	padding: 10px;
-	margin-right: 10px;
-	font-size: 25px;
+	font-size: 20px;
 	transition: all .2s ease;
 }
 
-.overlay_btns i:hover {
+.overlay_btns:hover span {
+	color: #c7b299;
+}
+
+.overlay_btns i {
+	color: #fff;
+	padding: 10px;
+	/* margin-right: 10px; */
+	font-size: 25px;
+
+}
+
+.overlay_btns:hover i {
 	color: #c7b299;
 }
 
@@ -842,6 +872,10 @@ header .slick-dots li button{
 	justify-content: center;
 }
 
+.mobile__img {
+	max-width: 700px;
+	width: 100%;
+}
 .mobile-img {
 	-o-object-fit: cover;
 	   object-fit: cover;
@@ -850,7 +884,7 @@ header .slick-dots li button{
 }
 
 .mobile__content {
-	max-width: 670px;
+	max-width: 600px;
 	width: 100%;
 	margin-left: 10px;
 	-ms-grid-row-align: center;
@@ -982,7 +1016,7 @@ header .slick-dots li button{
 /* Слайдер запущен */
 .slick-slider.slick-initialized{
 	min-width: 0;
-	width: 100%;
+	/* width: 100%; */
 /*	overflow-x: hidden;*/
 }
 /* Слайдер с точками */
@@ -1381,16 +1415,7 @@ footer .post__btn {
 	transition-duration: .1s;
 }
 
-.footer__twitter-post {}
-.waxom {
-	color: #00bff3;
-}
-.envato {
-	color: #00bff3;
-}
-.bit_ly {
-	color: #fff;
-}
+
 .footer-content__widget {}
 
 footer.rows {
@@ -1418,11 +1443,12 @@ footer.rows .container {
 }
 
 .copyright__link {
+	padding-left: 10px;
 	color: #959595;
 }
 
 .footer__links li {
-	white-space: nowrap;
+	/* white-space: nowrap; */
 	padding: 0 10px;
 	border-right: 1px solid #232323;
 
@@ -1446,7 +1472,7 @@ footer.rows .container {
 }
 
 .autors li {
-	white-space: nowrap;
+	/* white-space: nowrap; */
 	padding: 0 10px;
 	border-right: 1px solid #232323;
 }
@@ -1896,3 +1922,72 @@ footer.rows .container {
 		opacity: 1;
 	}
 }
+
+
+/* Engine page */
+
+
+.engine .container{
+	display: flex;
+	flex-direction: column;
+}
+
+.engine__link-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100px;
+	background-image: linear-gradient( 90deg, rgb(33,27,25) 0%, rgb(78,52,39) 100%);
+	margin-bottom: 70px;
+	padding: 10px 20px
+}
+
+.engine__link-container_bottom {
+	margin: 70px 0 0 0;
+}
+.engine__link-container_bottom .container {
+	display: flex;
+	align-items: center;
+	padding-bottom: 30px;
+}
+.engine__link {
+	display: inline-block;
+	
+}
+.engine__link_block {
+	display: block;
+	width: 100%;
+	margin-top: 50px;
+}
+.engine__title {
+	margin-bottom: 50px;
+}
+.engine__img-container {
+	margin-bottom: 50px;
+}
+.engine__img {
+
+}
+.engine__text {
+	text-align: justify;
+	margin-bottom: 50px;
+}
+
+.engine-pros-and-cons__title {
+	color: #000;
+	text-align: left;
+}
+.engine-pros-and-cons__title span {
+	color: #b39b84;
+	font-weight: 700;
+}
+
+.engine-pros-and-cons {
+	margin: 15px 0;
+}
+.engine__pros
+.engine__pro
+            
+.engine__cons
+.engine__con
